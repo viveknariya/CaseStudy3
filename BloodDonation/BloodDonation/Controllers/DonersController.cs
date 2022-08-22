@@ -30,7 +30,14 @@ namespace BloodDonation.Controllers
         }
 
 
-        
+        [HttpPost]
+        public IActionResult PostDoner(Doner doner)
+        {
+            _context.Doner.Add(doner);
+            _context.SaveChangesAsync();
+
+            return Ok(doner);
+        }
 
     }
 }
